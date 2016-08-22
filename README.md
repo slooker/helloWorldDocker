@@ -68,7 +68,7 @@ Successfully built 7aeb2cc2a71c
 
 Now if you run `docker images`, you should see your new hello-world image. 
 
-(add image container-v1)
+![v1 container image](http://i.imgur.com/a24tPKO.png)
 
 You can run this container now by doing this:
 
@@ -78,7 +78,7 @@ This is saying run the container tagged "hello-world" and the -i says to do it i
 
 You should see this when you run your container:
 
-(add image container-running )
+![running container](http://i.imgur.com/Drm9bPi.png)
 
 *Awesome.*
 
@@ -99,7 +99,7 @@ We follow the same procedure to build our container as above, giving it a slight
 
 Then run docker-images to see it:
 
-(add image container-v2)
+![v2 container image](http://i.imgur.com/KD7yx4v.png)
 
 Holy cow!  Our v2 container is twice the size of our v1 container.  Maybe we should remove all the stuff we installed to build our modules once we're done building them.
 
@@ -115,7 +115,7 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 Rebuild and change the container tag to `hello-world-v3` and run `docker images` again.
 
-(add image container-v3)
+![v3 container image](http://i.imgur.com/jZ29Ld8.png)
 
 Hmmm...  The v3 container is now slightly bigger than the v2 container.  That's not what we wanted.  The way Docker works, is that it keeps track of every "layer" (line in a Dockerfile) and saves it as part of the container.  So when we added a new layer, even though we removed some data from the container by uninstalling, it still needed to keep track of both of those layers.  The way around it is to move all of our apt-get, npm install, and apt-remove lines into a single Dockerfile command.
 
@@ -150,7 +150,7 @@ RUN apt-get update  && \
  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 ```
 
-(add image container-v4)
+![v4 container image](http://i.imgur.com/PV3JfqR.png)
 
 Nice!  Back down to close to the original size before we added mmmagic.
 
