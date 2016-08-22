@@ -1,0 +1,29 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "Simple hello world app that we're going to dockerize",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/slooker/helloWorldDocker.git"
+  },
+  "keywords": [
+    "Docker",
+    "Node"
+  ],
+  "author": "Shawn Looker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slooker/helloWorldDocker/issues"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "homepage": "https://github.com/slooker/helloWorldDocker#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
